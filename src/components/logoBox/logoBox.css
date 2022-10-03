@@ -1,4 +1,4 @@
-.container{
+.containerLogoBox{
     display: flex;
     background-color: #000F4D;
     min-height: 95vh;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.container-logoBoxIMG {
+.containerLogoBox-IMG {
     display: block;
     margin-left: auto;
     margin-right: auto;

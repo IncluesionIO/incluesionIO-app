@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {LogoBox} from './components/logoBox/logoBox'
+import {LoginBox} from './components/loginBox/loginBox'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <LogoBox />
       </div>
       <div className='App-loginBox'>
-        <h1>Input Side</h1>
+        <LoginBox />
       </div>
     </div>
   );

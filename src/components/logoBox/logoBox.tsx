@@ -4,8 +4,8 @@ import whiteLogoWithText from '../../img/Incluesion_Logo/PNG/IncluesionLogo_seco
 
 const LogoBox = () => {
     return (
-        <div className="container">
-            <img src={whiteLogoWithText} alt="logo" width={700} className="container-logoBoxIMG" />
+        <div className="containerLogoBox">
+            <img src={whiteLogoWithText} alt="logo" width={700} className="containerLogoBox-IMG" />
         </div>
     )
 };
