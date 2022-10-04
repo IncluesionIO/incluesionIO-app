@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {LogoBox} from './components/logoBox/logoBox'
+import {LoginBox} from './components/loginBox/loginBox'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Admin Incluesion APP
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='App-logoBox'>
+        <LogoBox />
+      </div>
+      <div className='App-loginBox'>
+        <LoginBox />
+      </div>
     </div>
   );
 }
