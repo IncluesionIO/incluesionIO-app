@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {LogoBox} from './components/logoBox/logoBox'
 import {LoginBox} from './components/loginBox/loginBox'

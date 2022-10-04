@@ -1,3 +1,18 @@
 .containerLoginBox {
+    display: flex;
     border: 3px solid purple;
+    border-radius: 10px;
+    min-height: 94vh;
+    margin: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerLoginBox-title {
+    border: 3px solid brown;
+}
+
+.containerLoginBox-title-text {
+    font-size: 75px;
+    font-weight: 300;
 }
