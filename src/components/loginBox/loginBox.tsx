@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import './loginBox.css'
 
 const LoginBox = () => {
@@ -7,6 +8,12 @@ const LoginBox = () => {
     const handleSubmit = (event: { preventDefault: () => void; }) =>
     {
         event.preventDefault()
+        axios.get("http://localhost:13000")
+        .then(response =>
+            {
+                const live = response.data
+                console.log(live)
+            })
     }
 
     const title = <h1 className="containerLoginBox-title-text">Log In</h1>
