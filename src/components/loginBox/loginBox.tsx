@@ -21,7 +21,6 @@ const LoginBox = () => {
   }, [username])
 
   const formValidator = () => {
-    console.log(username, password)
     let error = false
     if(username.trim().length < 1)
     {
@@ -38,6 +37,7 @@ const LoginBox = () => {
   };
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
+    setErrorAlert("")
     event.preventDefault();
     if(!formValidator())
     {
@@ -46,14 +46,21 @@ const LoginBox = () => {
             username,
             password
         }).then((response) => {
-          const live = response.data;
-          console.log(live);
+          const responseData = response.data;
+          localStorage.setItem('userAuth', JSON.stringify(responseData.token));
+          console.log(responseData);
         })
         .catch(err =>
             {
-                if(err.response.status === 401)
+                const status = err.response.status
+                if(status === 401)
                 {
                     setErrorAlert("A user with the username and password combination does not exist.")
+                }
+
+                if(status === 422 || status === 500)
+                {
+                    setErrorAlert("There was a problem logging in, please try again.")
                 }
             });
     }
