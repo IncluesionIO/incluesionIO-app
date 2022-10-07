@@ -110,7 +110,7 @@ const LoginBox = () => {
           </span>
         </div>
         <div className="formSettings">
-          <input type={"checkbox"} id="userSignInPreference"></input>
+          <input type={"checkbox"} id="userSignInPreference" disabled></input>
           <label htmlFor="userSignInPreference">Keep me signed in</label>
           <Link to="/forgot-password">Forgot password?</Link>
         </div>
