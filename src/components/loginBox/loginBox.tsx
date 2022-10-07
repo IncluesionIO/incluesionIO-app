@@ -81,7 +81,7 @@ const LoginBox = () => {
             type={"text"}
             id="userIdentification"
             placeholder=" "
-            onChange={(e) => {setUsername(e.target.value)}}
+            onChange={(e) => {setUsername(e.target.value.trim())}}
           ></input>
           <label htmlFor="userIdentification" className="inputLabel">
             Username
@@ -96,7 +96,7 @@ const LoginBox = () => {
             type={"password"}
             id="userPassword"
             placeholder=" "
-            onChange={(e) => {setPassword(e.target.value)}}
+            onChange={(e) => {setPassword(e.target.value.trim())}}
           ></input>
           <label
             htmlFor="userPassword"
