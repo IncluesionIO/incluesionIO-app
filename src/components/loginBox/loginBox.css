@@ -3,17 +3,12 @@
 .containerLoginBox {
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    border: 3px solid purple;
     border-radius: 10px;
     min-height: 94vh;
     margin: 20px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.containerLoginBox-title {
-    border: 3px solid brown;
 }
 
 .containerLoginBox-title-text {
@@ -42,7 +37,7 @@
     color: #222;
 }
 
-.userInput:valid + .inputLabel {
+.userInput:not(:placeholder-shown) + .inputLabel {
     transform: translateX(-1rem) translateY(-2rem);
     font-size: 1rem;
     color: #222;

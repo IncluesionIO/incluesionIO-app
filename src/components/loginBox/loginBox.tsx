@@ -80,6 +80,7 @@ const LoginBox = () => {
             className={"userInput"}
             type={"text"}
             id="userIdentification"
+            placeholder=" "
             onChange={(e) => {setUsername(e.target.value)}}
           ></input>
           <label htmlFor="userIdentification" className="inputLabel">
@@ -94,6 +95,7 @@ const LoginBox = () => {
             className={"userInput"}
             type={"password"}
             id="userPassword"
+            placeholder=" "
             onChange={(e) => {setPassword(e.target.value)}}
           ></input>
           <label
