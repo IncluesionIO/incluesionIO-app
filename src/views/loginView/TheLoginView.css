@@ -1,0 +1,16 @@
+.loginContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.logoBox {
+  flex: 1;
+}
+
+.loginBox  {
+  flex: 1;
+}
+
+
