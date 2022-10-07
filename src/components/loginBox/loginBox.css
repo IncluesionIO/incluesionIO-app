@@ -80,6 +80,7 @@
 }
 
 .error-message {
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     align-items: center;
@@ -93,9 +94,24 @@
 .error-message::before {
     font-family: FontAwesome;
     content: '\f071';
+    margin-right: 0.5rem;
 }
 
 .error-message:empty {
+    display: none;
+}
+
+.errorAlert {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px solid #d30909;
+    border-radius: 5px;
+    background-color: #eb8e8e;
+    color: white;
+    width: 50%;
+}
+
+.errorAlert:empty {
     display: none;
 }
 
