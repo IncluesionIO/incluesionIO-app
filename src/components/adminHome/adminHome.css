@@ -1,0 +1,7 @@
+.admin{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* border: 3px solid green */
+  }
