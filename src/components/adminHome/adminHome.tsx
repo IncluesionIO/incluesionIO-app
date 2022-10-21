@@ -7,9 +7,13 @@ import { AdminMain } from "./adminMain/adminMain";
 const AdminHome = () => {
     const [userId, setUserId] = useState(() =>
     {
-        const saved = localStorage.getItem('userId') || ""
-        const value = JSON.parse(saved)
-        return value || ""
+        const saved = localStorage.getItem('userId')
+        if(saved)
+        {
+            const value = JSON.parse(saved)
+            return value || ""
+        }
+        return ""
     })
 
     if(!userId.length)
