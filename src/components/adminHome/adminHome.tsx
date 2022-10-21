@@ -25,4 +25,4 @@ const AdminHome = () => {
     )
 }
 
-export {AdminHome}
+export default AdminHome
