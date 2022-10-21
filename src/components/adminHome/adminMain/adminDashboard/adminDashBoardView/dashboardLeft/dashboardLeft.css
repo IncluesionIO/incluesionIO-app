@@ -11,11 +11,36 @@
 }
 .component-overview{
     margin: 8px;
+    padding: 0.5rem;
     flex: 1;
     background-color: white;
     border-radius: 10px;
     border: 3px solid black;
 }
+
+.component-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.section-title {
+    width: fit-content;
+    margin-right: auto;
+}
+
+.component-filter {
+    width: 10rem;
+    height: 3rem;
+    color: #1b161694;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: #F2F2F3;
+    border: none
+}
+
 .dashboardLeft-bottom{
     flex: 1;
     display: flex;
@@ -27,4 +52,13 @@
     background-color: white;
     border-radius: 10px;
     border: 3px solid black;
+}
+
+.widget-container {
+    box-sizing: border-box;
+    background-color: #F2F2F3;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+
 }

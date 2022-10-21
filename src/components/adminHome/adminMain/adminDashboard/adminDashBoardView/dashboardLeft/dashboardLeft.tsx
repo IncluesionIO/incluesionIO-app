@@ -1,4 +1,5 @@
 import React from "react";
+import AssessmentCounter from "../../../../../assessmentCounter/assessmentCounter";
 import './dashboardLeft.css'
 
 const DashboardLeft = () => {
@@ -6,7 +7,15 @@ const DashboardLeft = () => {
         <div className='dashboardLeft'>
             <div className='dashboardLeft-top'>
                 <div className='component-overview'>
-                    <h4>Overview</h4>
+                    <div className="component-header">
+                        <h2 className="section-title">Overview</h2>
+                        <select className="component-filter">
+                            <option>All time</option>
+                        </select>
+                    </div>
+                    <div className="widget-container">
+                        <AssessmentCounter />
+                    </div>
                 </div>
             </div>
             <div className='dashboardLeft-bottom'>
