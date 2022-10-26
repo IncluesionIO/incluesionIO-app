@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./loginBox.css";
 
@@ -9,6 +9,8 @@ const LoginBox = () => {
   const [identifierError, setIdentifierError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+
+  const navigate = useNavigate()
 
   useEffect(() =>
   {
@@ -48,7 +50,8 @@ const LoginBox = () => {
         }).then((response) => {
           const responseData = response.data;
           localStorage.setItem('userAuth', JSON.stringify(responseData.token));
-          console.log(responseData);
+          localStorage.setItem('userId', JSON.stringify(responseData.userId));
+          navigate('/dashboard')
         })
         .catch(err =>
             {
