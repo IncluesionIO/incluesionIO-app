@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from 'react-router-dom'
+import TopBar from "../globals/topBar/topBar";
 import './adminHome.css'
-import { AdminTopBar } from "./adminTopBar/adminTopBar";
 import { AdminMain } from "./adminMain/adminMain";
 
 const AdminHome = () => {
@@ -23,7 +23,7 @@ const AdminHome = () => {
 
     return (
         <div className="admin">
-            <AdminTopBar />
+            <TopBar />
             <AdminMain />
         </div>
     )
