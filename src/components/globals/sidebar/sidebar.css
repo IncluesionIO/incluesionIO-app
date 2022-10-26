@@ -1,7 +1,7 @@
 :root {
   --SIDENAV-BAR-WIDTH: 100px;
   --SIDENAV-BAR-WIDTH-ACTIVE: 250px;
-  --SIDENAV-BAR-COLOR: #000F4DEE;
+  --NAV-BAR-COLOR: #000F4DEE;
   --NOT-VISIBLE-TEXT: none;
 }
 
@@ -13,8 +13,8 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: var(--SIDENAV-BAR-COLOR);
-  box-shadow: 2px 0px 5px 2px;
+  background-color: var(--NAV-BAR-COLOR);
+  box-shadow: 2px 0px 9px -4px;
   transition: width 0.1s ease-in;
 }
 

@@ -1,0 +1,10 @@
+:root {
+  --TOPBAR-HEIGHT: 80px;
+}
+
+.topbar-container {
+  height: var(--TOPBAR-HEIGHT);
+  z-index: 100;
+  background-color: var(--NAV-BAR-COLOR);
+  display: flex;
+}
