@@ -4,6 +4,7 @@ import './assessmentCounter.css'
 
 const AssessmentCounter = () => {
   const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => 
   {
@@ -11,15 +12,22 @@ const AssessmentCounter = () => {
       .then(response =>
         {
           setCount(response.data.length)
+          setLoading(false)
         })
   })
 
   return (
     <div className="counter-container">
       <h3 className="counter-title">Assessment Count</h3>
-      <span className="counter-text">
-        {count} Total
-      </span>
+        {loading === false ?
+          <span className="counter-text">
+            {count} Total
+          </span> : 
+          <span className="counter-text">
+          Loading...
+        </span>
+        }
+        
     </div>
   )
 

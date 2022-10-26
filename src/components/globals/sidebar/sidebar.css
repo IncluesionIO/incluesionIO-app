@@ -66,6 +66,12 @@
   opacity: 100;
 }
 
+.side-nav-link.is-active {
+  background-color: white;
+  fill: black;
+  color: black;
+}
+
 .side-nav-bottom {
   position: absolute;
   width: var(--SIDENAV-BAR-WIDTH-ACTIVE);
