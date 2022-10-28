@@ -51,7 +51,7 @@ const LoginBox = () => {
           const responseData = response.data;
           localStorage.setItem('userAuth', JSON.stringify(responseData.token));
           localStorage.setItem('userId', JSON.stringify(responseData.userId));
-          navigate('/dashboard')
+          navigate('/admin')
         })
         .catch(err =>
             {

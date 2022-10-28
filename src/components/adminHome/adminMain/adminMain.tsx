@@ -7,7 +7,6 @@ import Sidebar from "../../globals/sidebar/sidebar";
 const AdminMain = () => {
     return (
         <div className='admin-main'>
-            <Sidebar />
             <AdminDashboard />
         </div>
     )

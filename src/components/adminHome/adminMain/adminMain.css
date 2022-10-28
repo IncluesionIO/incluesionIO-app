@@ -1,4 +1,9 @@
+:root {
+    --SIDEBAR-OFFSET: calc(var(--SIDENAV-BAR-WIDTH))
+}
+
 .admin-main {
+    margin-left: var(--SIDEBAR-OFFSET);
     flex: 55;
     background-color: #f2f2f3;
     display: flex;

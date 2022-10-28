@@ -1,9 +1,4 @@
-:root {
-    --SIDEBAR-OFFSET: calc(var(--SIDENAV-BAR-WIDTH) + 20px)
-}
-
 .admin-dashboard{
-    margin-left: var(--SIDEBAR-OFFSET);
     flex: 8;
     display: flex;
     flex-direction: column;

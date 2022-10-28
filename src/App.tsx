@@ -13,7 +13,7 @@ function App() {
         <Route path="/reset/:token" element={<TheResetPasswordView />} />
         <Route path="/forgot-password" element={<TheForgotPasswordView />} />
         <Route path="/" element={<TheLoginView />} />
-        <Route path="/dashboard" element={<AdminHome />} />
+        <Route path="/admin/*" element={<AdminHome />} />
       </Routes>
     </Router>
   );
