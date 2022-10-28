@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 import './dashboardLeft.css'
-import AssessmentCounter from "../../../../assessmentCounter/assessmentCounter";
-import LineChart from "../../../../graphs/lineChart";
-import BarChart from "../../../../graphs/barChart";
+import AssessmentCounter from "../../../assessmentCounter/assessmentCounter";
+import LineChart from "../../../graphs/lineChart";
+import BarChart from "../../../graphs/barChart";
 const DashboardLeft = () => {
 
     return (
