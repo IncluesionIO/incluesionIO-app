@@ -43,7 +43,7 @@ const DashboardRight = () => {
       <div className="dashboardRight-top">
         <div className="component">
           <div className="component-header">
-            <h2 className="section-title">Departments</h2>
+            <h2 className="section-title">Departments (Users)</h2>
           </div>
           <div className="widget-container">
             <div className="container-department">
