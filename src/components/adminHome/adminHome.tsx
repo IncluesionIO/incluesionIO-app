@@ -30,7 +30,7 @@ const AdminHome = () => {
             </div>
             <Sidebar />
             <Routes>
-                <Route path="/home" element={<AdminMain />}></Route>
+                <Route path="/home" element={<AdminMain title="Dashboard" />}></Route>
                 <Route path="/users"></Route>
                 <Route path="/analytics"></Route>
                 <Route path="/settings"></Route>

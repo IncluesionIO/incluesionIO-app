@@ -9,6 +9,6 @@
     flex: 55;
     background-color: #f2f2f3;
     display: flex;
-    flex-direction: row;
-    /* border: 3px solid pink; */
+    flex-direction: column;
+    padding: 0 1rem;
 }

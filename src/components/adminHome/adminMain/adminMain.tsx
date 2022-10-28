@@ -1,13 +1,14 @@
 import React from "react";
+import { AdminDashboardView } from "./adminDashBoardView/adminDashBoardView";
 import './adminMain.css';
 
-import { AdminDashboard } from "./adminDashboard/adminDashboard";
-import Sidebar from "../../globals/sidebar/sidebar";
+import AdminPageTitle from "./adminPageTitle/adminDashboardTitle";
 
-const AdminMain = () => {
+const AdminMain = (props: any) => {
     return (
         <div className='admin-main'>
-            <AdminDashboard />
+            <AdminPageTitle title={props.title} />
+            <AdminDashboardView />
         </div>
     )
 }
