@@ -9,7 +9,7 @@ const DashboardLeft = () => {
     return (
         <div className='dashboardLeft'>
             <div className='dashboardLeft-top'>
-                <div className='component-overview'>
+                <div className='component'>
                     <div className="component-header">
                         <h2 className="section-title">Overview</h2>
                         <select className="component-filter">
@@ -22,7 +22,7 @@ const DashboardLeft = () => {
                 </div>
             </div>
             <div className='dashboardLeft-bottom'>
-                <div className='component-graph'>
+                <div className='component'>
                     <div className="component-header">
                         <h2 className="section-title">Graph</h2>
                     </div>
