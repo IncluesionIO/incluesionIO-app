@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import AssessmentCounter from "../../../../../assessmentCounter/assessmentCounter";
 import LineChart from "../../../../../graphs/lineChart";
 import './dashboardLeft.css'
@@ -25,6 +26,7 @@ const DashboardLeft = () => {
                         <h2 className="section-title">Graph</h2>
                     </div>
                     <div className="widget-container">
+                        <LineChart />
                         <LineChart />
                     </div>
                 </div>
