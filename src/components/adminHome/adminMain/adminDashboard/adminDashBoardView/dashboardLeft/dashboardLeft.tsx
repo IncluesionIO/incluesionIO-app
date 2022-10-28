@@ -1,8 +1,9 @@
 import React from "react";
 import AssessmentCounter from "../../../../../assessmentCounter/assessmentCounter";
+import LineChart from "../../../../../graphs/lineChart";
 import './dashboardLeft.css'
-
 const DashboardLeft = () => {
+
     return (
         <div className='dashboardLeft'>
             <div className='dashboardLeft-top'>
@@ -20,7 +21,12 @@ const DashboardLeft = () => {
             </div>
             <div className='dashboardLeft-bottom'>
                 <div className='component-graph'>
-                    <h4>Graph</h4>
+                    <div className="component-header">
+                        <h2 className="section-title">Graph</h2>
+                    </div>
+                    <div className="widget-container">
+                        <LineChart />
+                    </div>
                 </div>
             </div>
         </div>
