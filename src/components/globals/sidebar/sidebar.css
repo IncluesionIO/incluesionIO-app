@@ -6,6 +6,7 @@
 }
 
 .side-nav-container {
+  margin-top: var(--TOPBAR-HEIGHT);
   width: var(--SIDENAV-BAR-WIDTH);
   white-space: nowrap;
   overflow-x: hidden;

@@ -1,0 +1,21 @@
+.department {
+    display: flex;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+}
+
+.department:first-of-type {
+    margin-top: .5rem;
+}
+
+.department-name,
+.department-users
+{
+    width: fit-content;
+}
+
+.department-users {
+    margin-left: auto;
+}

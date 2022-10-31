@@ -1,12 +1,15 @@
 import React from "react";
-import AssessmentCounter from "../../../../../assessmentCounter/assessmentCounter";
+import axios from "axios";
 import './dashboardLeft.css'
-
+import AssessmentCounter from "../../../assessmentCounter/assessmentCounter";
+import LineChart from "../../../graphs/lineChart";
+import BarChart from "../../../graphs/barChart";
 const DashboardLeft = () => {
+
     return (
         <div className='dashboardLeft'>
             <div className='dashboardLeft-top'>
-                <div className='component-overview'>
+                <div className='component'>
                     <div className="component-header">
                         <h2 className="section-title">Overview</h2>
                         <select className="component-filter">
@@ -19,8 +22,14 @@ const DashboardLeft = () => {
                 </div>
             </div>
             <div className='dashboardLeft-bottom'>
-                <div className='component-graph'>
-                    <h4>Graph</h4>
+                <div className='component'>
+                    <div className="component-header">
+                        <h2 className="section-title">Graph</h2>
+                    </div>
+                    <div className="widget-container">
+                        <LineChart />
+                        <BarChart/>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,11 +3,14 @@
 }
 
 .topbar-container {
+  position: fixed;
+  width: 100%;
   height: var(--TOPBAR-HEIGHT);
   z-index: 100;
   background-color: var(--NAV-BAR-COLOR);
   display: flex;
   align-items: center;
+  backdrop-filter: blur(10px);
 }
 
 .topbar-logo {

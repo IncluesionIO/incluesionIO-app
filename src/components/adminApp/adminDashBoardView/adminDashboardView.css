@@ -1,0 +1,22 @@
+:root {
+    --SIDEBAR-OFFSET: var(--SIDENAV-BAR-WIDTH);
+    --TOPBAR-OFFSET: var(--TOPBAR-HEIGHT)
+}
+
+.admin-main {
+    margin-left: var(--SIDEBAR-OFFSET);
+    margin-top: var(--TOPBAR-OFFSET);
+    flex: 55;
+    background-color: #f2f2f3;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
+.admin-dashboardView{
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+}
+
+
