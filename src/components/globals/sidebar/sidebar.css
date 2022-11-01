@@ -33,6 +33,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
+  cursor: pointer;
   text-decoration: none;
   color: white;
   fill: white;

@@ -9,7 +9,7 @@ import { ReactComponent as LogoutIcon } from "./icons/right-from-bracket-solid.s
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = (props:any) => {
   const [activeRoute, setActiveRoute] = useState(window.location.href);
   //In case of a redirect
   useEffect(() =>
@@ -64,7 +64,7 @@ const Sidebar = () => {
           activeRoute={activeRoute}
           setActiveRoute={setActiveRoute}
         />
-        <SidebarSelection name="Log out" link="/logout" icon={<LogoutIcon />} />
+        <SidebarSelection name="Log out" onClick={props.logout} icon={<LogoutIcon />} />
       </div>
     </nav>
   );
@@ -96,6 +96,7 @@ const SidebarSelection = (props: any) => {
   };
   return (
     <div className="side-nav-link-container" onClick={getActive}>
+      {props.link ? 
       <Link
         to={props.link}
         className={`side-nav-link ${
@@ -104,7 +105,12 @@ const SidebarSelection = (props: any) => {
       >
         {props.icon}
         <p className="side-nav-link-text">{props.name}</p>
-      </Link>
+      </Link> :
+      <div className="side-nav-link" onClick={props.onClick}>
+        {props.icon}
+        <p className="side-nav-link-text">{props.name}</p>
+      </div>
+      }
     </div>
   );
 };
