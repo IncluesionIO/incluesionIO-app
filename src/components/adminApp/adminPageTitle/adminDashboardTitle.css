@@ -1,6 +1,7 @@
 .admin-pageTitle{
     flex: 1;
     padding-left: 10px;
+    width: fit-content;
     /* border: 3px solid red; */
 }
 .admin-pageTitleText{
