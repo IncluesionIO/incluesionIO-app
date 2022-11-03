@@ -11,7 +11,7 @@ const UserListContainer = () => {
   const [userList, setUserList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  if(userList.length)
+  if(!userList.length)
   {
     axios.get("http://localhost:13000/user/list")
     .then(response =>
@@ -31,6 +31,7 @@ const UserListContainer = () => {
       const seed = Math.floor(Math.random() * 1000)
       return (
         <UserRow
+          userId={user.id}
           imageUrl={user.avatar}
           fullName={user.name}
           email={user.email}
