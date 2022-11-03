@@ -123,15 +123,6 @@
   border-spacing: 0 1rem;
 }
 
-.userList-table-row {
-  background-color: #f2f2f3;
-  border-radius: 1rem;
-}
-
-.userList-table-row:hover {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 8px 0px;
-}
-
 .userList-table-header {
   font-weight: bold;
   color: #575454;
@@ -143,38 +134,6 @@
   width: 40%;
 }
 
-.userList-table-name {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0;
-}
-
-.userIcon {
-  border: 1px solid rgba(100, 100, 111, 0.2);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  margin-right: 1rem;
-  margin-left: 0.5rem;
-}
-
-.user-Fullname,
-.user-email {
-  margin: 0;
-  font-weight: bold;
-}
-
-.user-email {
-  color: #494949;
-}
-
-/** Styling table borders **/
-
-.userList-table-row td:first-child {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-}
-.userList-table-row td:last-child {
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+.user-loading {
+  margin: auto;
 }

@@ -1,0 +1,105 @@
+
+.userList-table-row {
+  background-color: #f2f2f3;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.userList-table-row:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 8px 0px;
+}
+
+.userList-table-name {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.userIcon {
+  border: 1px solid rgba(100, 100, 111, 0.2);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+.userIcon-img {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.user-Fullname,
+.user-email {
+  margin: 0;
+  font-weight: bold;
+}
+
+.user-email {
+  color: #494949;
+}
+
+/** Styling table borders **/
+
+.userList-table-row td:first-child {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.userList-table-row td:last-child {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.actions {
+  position: relative;
+  text-align: end;
+  padding-right: 2rem;
+}
+
+.user-menu-button {
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.1s ease;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.user-menu-button:hover {
+  background-color: #b4b4b4;
+}
+
+.user-context-menu {
+  display: none;
+  position: absolute;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 10rem;
+  top: 3.3rem;
+  left: 1rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.user-context-menu-button
+{
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: start;
+  width: 100%;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.1s ease;
+}
+
+.user-context-menu-button:hover {
+  background-color: #b4b4b4;
+}
+
+.deactivate {
+  color: red;
+}

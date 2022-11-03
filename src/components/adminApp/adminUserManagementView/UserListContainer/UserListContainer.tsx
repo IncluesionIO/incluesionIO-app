@@ -1,9 +1,47 @@
-import react from "react";
+import react, { useState } from "react";
 import "./UserListContainer.css";
+import Lottie from "react-lottie";
+import * as animationData from "./icon/125182-loading.json";
 import { ReactComponent as MagnifyingGlass } from "./icon/magnifying-glass-solid.svg";
 import { ReactComponent as FilterIcon } from "./icon/filter-solid.svg";
 import { ReactComponent as ChaveronIcon } from "./icon/chevron-down-solid.svg";
+import UserRow from "./UserRow/UserRow";
+import axios from "axios";
 const UserListContainer = () => {
+  const [userList, setUserList] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  if(userList.length)
+  {
+    axios.get("http://localhost:13000/user/list")
+    .then(response =>
+      {
+        setUserList(response.data)
+        setLoading(false)
+      })
+    .catch(err =>
+    {
+      console.log(err)
+    })
+  }
+
+  const renderUserList = () => {
+
+    return userList.map((user) => {
+      const seed = Math.floor(Math.random() * 1000)
+      return (
+        <UserRow
+          imageUrl={user.avatar}
+          fullName={user.name}
+          email={user.email}
+          role={user.role}
+          status={user.accountStatus ? 'Active' : 'Deactivated'}
+          lastLogin={user.lastLogin}
+        />
+      );
+    });
+  };
+
   return (
     <div className="userList-container">
       <div className="userList-header">
@@ -29,164 +67,32 @@ const UserListContainer = () => {
         </div>
       </div>
       <div className="userList-table-container">
-        <table className="userList-table">
-          <thead>
-            <td className="userList-table-header">Name</td>
-            <td className="userList-table-header">Account Access</td>
-            <td className="userList-table-header">Status</td>
-            <td className="userList-table-header">Last Login</td>
-            <td className="userList-table-header">Actions</td>
-          </thead>
-          <tbody>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-            <tr className="userList-table-row">
-              <td>
-                <div className="userList-table-name">
-                  <div className="userIcon">
-                    <img src="#" className="userIcon-img"></img>
-                  </div>
-                  <div className="userInfo">
-                    <p className="user-Fullname">Brett Finlay</p>
-                    <p className="user-email">brett.finlay@company.com</p>
-                  </div>
-                </div>
-              </td>
-              <td>Full Member</td>
-              <td>Active</td>
-              <td>
-                Wednesday, October 26, 2022 <br /> 17:11
-              </td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        {loading ? (
+          <div className="user-loading">
+            <Lottie
+              options={{
+                loop: true,
+                autoplay: true,
+                animationData,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid slice",
+                },
+              }}
+              width={200}
+            ></Lottie>
+          </div>
+        ) : (
+          <table className="userList-table">
+            <thead>
+              <td className="userList-table-header">Name</td>
+              <td className="userList-table-header">Account Access</td>
+              <td className="userList-table-header">Status</td>
+              <td className="userList-table-header">Last Login</td>
+              <td className="userList-table-header"></td>
+            </thead>
+            <tbody>{renderUserList()}</tbody>
+          </table>
+        )}
       </div>
     </div>
   );
