@@ -7,28 +7,36 @@ import { ReactComponent as FilterIcon } from "./icon/filter-solid.svg";
 import { ReactComponent as ChaveronIcon } from "./icon/chevron-down-solid.svg";
 import UserRow from "./UserRow/UserRow";
 import axios from "axios";
+import ModalBase from "../../../globals/Modals/ModalBase";
+import UserModal from "./UserModal/UserModal";
 const UserListContainer = () => {
   const [userList, setUserList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [modalOpened, setModalOpened] = useState(false);
+  const [selectedUserId, setSelectedUserId] = useState('')
 
-  if(!userList.length)
-  {
-    axios.get("http://localhost:13000/user/list")
-    .then(response =>
-      {
-        setUserList(response.data)
-        setLoading(false)
+  //TODO: Cache this list to decrease the loads
+  if (!userList.length) {
+    axios
+      .get("http://localhost:13000/user/list")
+      .then((response) => {
+        setUserList(response.data);
+        setLoading(false);
       })
-    .catch(err =>
-    {
-      console.log(err)
-    })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
-  const renderUserList = () => {
+  const operateModal = (userId: any) => {
+    console.log(userId)
+    setSelectedUserId(userId)
+    setModalOpened(true);
+  };
 
+  const renderUserList = () => {
     return userList.map((user) => {
-      const seed = Math.floor(Math.random() * 1000)
+      const seed = Math.floor(Math.random() * 1000);
       return (
         <UserRow
           userId={user.id}
@@ -36,8 +44,9 @@ const UserListContainer = () => {
           fullName={user.name}
           email={user.email}
           role={user.role}
-          status={user.accountStatus ? 'Active' : 'Deactivated'}
+          status={user.accountStatus ? "Active" : "Deactivated"}
           lastLogin={user.lastLogin}
+          onClick={operateModal}
         />
       );
     });
@@ -45,6 +54,9 @@ const UserListContainer = () => {
 
   return (
     <div className="userList-container">
+      {modalOpened ? (
+        <UserModal userId={selectedUserId} closeModal={() => setModalOpened(false)} />
+      ) : null}
       <div className="userList-header">
         <div className="userList-search">
           <div className="userList-search-icon">

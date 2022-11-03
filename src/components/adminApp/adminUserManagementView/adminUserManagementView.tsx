@@ -9,8 +9,8 @@ const AdminUserManagementView = (props: any) => {
     <div className="admin-main">
       <div className="admin-main-header">
         <AdminPageTitle title="User Management" />
-        <HeaderButtons text="Export User List" />
-        <HeaderButtons text="Invite Members" disabled/>
+        <HeaderButtons text="Export User List" disabled/>
+        <HeaderButtons text="Create User"/>
       </div>
       <div className="admin-dashboardView">
         <UserListContainer />

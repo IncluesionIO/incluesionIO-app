@@ -12,6 +12,7 @@ import {ReactComponent as UserEditIcon} from '../icon/contextMenu.svg'
  * @param props.role - Role to display for user
  * @param props.status - Account status to display for user
  * @param props.lastLogin - Last login to display for user
+ * @param props.onClick - Function to run when the row is clicked
  * @returns React Component
  */
 const UserRow = (props: any) => {
@@ -35,7 +36,7 @@ const UserRow = (props: any) => {
   }
 
   return (
-    <tr className="userList-table-row">
+    <tr className="userList-table-row" onClick={e => props.onClick(props.userId)}>
       <td>
         <div className="userList-table-name">
           <div className="userIcon">
@@ -53,7 +54,7 @@ const UserRow = (props: any) => {
         {props.lastLogin ? props.lastLogin : NO_DATA_MSG}
       </td>
       <td className="actions">
-        <button onClick={() => setContextMenuOpen(!contextMenuOpen)} className="user-menu-button"><UserEditIcon /></button>
+        <button onClick={e => {setContextMenuOpen(!contextMenuOpen); e.stopPropagation()}} className="user-menu-button"><UserEditIcon /></button>
         <div className="user-context-menu" style={{"display": contextMenuOpen ? "block" : "none"}}>
           <button className="user-context-menu-button">Edit</button>
           <button className="user-context-menu-button">Change Account Role</button>
