@@ -72,7 +72,7 @@ const UserModal = (props: any) => {
   if (!loading) {
     return (
       <ModalBase
-        title={`${user.name} Settings`}
+        title={`User Settings`}
         closeModal={props.closeModal}
         footer={modalFooter()}
       >
