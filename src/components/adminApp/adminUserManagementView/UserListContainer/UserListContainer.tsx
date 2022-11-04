@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import "./UserListContainer.css";
 import Lottie from "react-lottie";
 import * as animationData from "./icon/125182-loading.json";
@@ -14,20 +14,19 @@ const UserListContainer = () => {
   const [modalOpened, setModalOpened] = useState(false);
   const [modalEditMode, setModalEditMode] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState("");
-
-  //TODO: Cache this list to decrease the loads
-  if (!userList.length) {
+  useEffect(() =>
+  {
     axios
-      .get("http://localhost:13000/user/list")
-      .then((response) => {
-        setUserList(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
+    .get("http://localhost:13000/user/list")
+    .then((response) => {
+      setUserList(response.data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  })
+  
   const updateUser = (user: any) => {
     console.log(user);
     axios
