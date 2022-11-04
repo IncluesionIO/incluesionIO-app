@@ -32,10 +32,10 @@ const UserModal = (props: any) => {
 
   const submitUpdates = () =>
   {
-    console.log('called')
     if(validator.current.allValid())
     {
-      alert('Submitted')
+      props.updateUser(user)
+      props.closeModal()
     }
     else{
       validator.current.showMessages()
@@ -105,10 +105,8 @@ const UserModal = (props: any) => {
               id="user-modal-username"
               className={"user-modal-input"}
               value={user.username}
-              disabled={!editMode}
-              onChange={e => setUser({...user, username: e.target.value})}
+              disabled
             ></input>
-            {validator.current.message('Username', user.username, 'required|alpha|min:5,string', { className: 'text-danger' }) }
           </label>
         </div>
         <div className="user-modal-email">

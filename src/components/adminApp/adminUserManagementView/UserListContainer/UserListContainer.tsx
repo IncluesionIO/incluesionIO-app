@@ -14,7 +14,7 @@ const UserListContainer = () => {
   const [loading, setLoading] = useState(true);
   const [modalOpened, setModalOpened] = useState(false);
   const [modalEditMode, setModalEditMode] = useState(false);
-  const [selectedUserId, setSelectedUserId] = useState('')
+  const [selectedUserId, setSelectedUserId] = useState("");
 
   //TODO: Cache this list to decrease the loads
   if (!userList.length) {
@@ -29,10 +29,36 @@ const UserListContainer = () => {
       });
   }
 
-  const operateModal = (userId: any, modalOpenAsEdit:boolean) => {
-    setSelectedUserId(userId)
+  const updateUser = (user: any) => {
+    console.log(user)
+    axios
+      .put("http://localhost:13000/admin/userUpdate", {
+        userId: user.id,
+        changeObject: {
+          username: user.username,
+          email: user.email,
+          name: user.name,
+          accountStatus: user.accountStatus,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        setUserList([])
+        alert('User updated successfully!')
+      })
+      .catch((err) => {
+        console.log(err);
+        if(err.response.status === 401)
+        {
+          alert('Operation not allowed!')
+        }
+      });
+  };
+
+  const operateModal = (userId: any, modalOpenAsEdit: boolean) => {
+    setSelectedUserId(userId);
     setModalOpened(true);
-    setModalEditMode(modalOpenAsEdit)
+    setModalEditMode(modalOpenAsEdit);
   };
 
   const renderUserList = () => {
@@ -56,7 +82,12 @@ const UserListContainer = () => {
   return (
     <div className="userList-container">
       {modalOpened ? (
-        <UserModal userId={selectedUserId} closeModal={() => setModalOpened(false)} editMode={modalEditMode}/>
+        <UserModal
+          userId={selectedUserId}
+          closeModal={() => setModalOpened(false)}
+          editMode={modalEditMode}
+          updateUser={updateUser}
+        />
       ) : null}
       <div className="userList-header">
         <div className="userList-search">
