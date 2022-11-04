@@ -13,6 +13,7 @@ const UserListContainer = () => {
   const [userList, setUserList] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalOpened, setModalOpened] = useState(false);
+  const [modalEditMode, setModalEditMode] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState('')
 
   //TODO: Cache this list to decrease the loads
@@ -28,10 +29,10 @@ const UserListContainer = () => {
       });
   }
 
-  const operateModal = (userId: any) => {
-    console.log(userId)
+  const operateModal = (userId: any, modalOpenAsEdit:boolean) => {
     setSelectedUserId(userId)
     setModalOpened(true);
+    setModalEditMode(modalOpenAsEdit)
   };
 
   const renderUserList = () => {
@@ -55,7 +56,7 @@ const UserListContainer = () => {
   return (
     <div className="userList-container">
       {modalOpened ? (
-        <UserModal userId={selectedUserId} closeModal={() => setModalOpened(false)} />
+        <UserModal userId={selectedUserId} closeModal={() => setModalOpened(false)} editMode={modalEditMode}/>
       ) : null}
       <div className="userList-header">
         <div className="userList-search">

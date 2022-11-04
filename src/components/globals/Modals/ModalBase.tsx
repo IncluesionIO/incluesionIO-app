@@ -1,7 +1,15 @@
 import react from 'react'
+import PropTypes from 'prop-types'
 import './ModalBase.css'
 import {ReactComponent as CloseButton} from './icons/xmark-solid.svg'
-
+/**
+ * 
+ * @param props.closeModal - Function to handle closing the modal
+ * @param props.title - The title on the modal
+ * @param props.children - The body of the modal
+ * @param props.footer - The footer of the modal
+ * @returns A modal
+ */
 const ModalBase = (props:any) =>
 {
   const onClose = () =>

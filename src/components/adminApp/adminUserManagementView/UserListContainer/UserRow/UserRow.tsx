@@ -36,7 +36,7 @@ const UserRow = (props: any) => {
   }
 
   return (
-    <tr className="userList-table-row" onClick={e => props.onClick(props.userId)}>
+    <tr className="userList-table-row" onClick={e => props.onClick(props.userId, false)}>
       <td>
         <div className="userList-table-name">
           <div className="userIcon">
@@ -53,10 +53,10 @@ const UserRow = (props: any) => {
       <td>
         {props.lastLogin ? props.lastLogin : NO_DATA_MSG}
       </td>
-      <td className="actions">
+      <td className="actions" onClick={e => e.stopPropagation()}>
         <button onClick={e => {setContextMenuOpen(!contextMenuOpen); e.stopPropagation()}} className="user-menu-button"><UserEditIcon /></button>
         <div className="user-context-menu" style={{"display": contextMenuOpen ? "block" : "none"}}>
-          <button className="user-context-menu-button">Edit</button>
+          <button className="user-context-menu-button" onClick={e => props.onClick(props.userId, true)}>Edit</button>
           <button className="user-context-menu-button">Change Account Role</button>
           <button className="user-context-menu-button deactivate">Deactivate Account</button>
         </div>

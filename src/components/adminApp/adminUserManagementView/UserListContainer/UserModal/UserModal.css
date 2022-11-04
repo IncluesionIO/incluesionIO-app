@@ -31,6 +31,10 @@
   outline: none;
 }
 
+.user-modal-input:focus {
+  outline: auto;
+}
+
 .user-modal-status input
 {
   margin-right: 0.5rem;
