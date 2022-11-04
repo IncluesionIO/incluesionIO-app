@@ -22,7 +22,7 @@
 
 .user-modal-input
 {
-  width: 100%;
+  width: 95%;
   font-size: 1.2rem;
   padding-left: 0.5rem;
   height: 3rem;
@@ -32,7 +32,7 @@
 }
 
 .user-modal-input:focus {
-  outline: auto;
+  background-color: #41A0B511;
 }
 
 .user-modal-status input
@@ -62,6 +62,7 @@
   box-shadow: rgba(0,0,0, 0.5) 0px 2px 6px 0px;
   min-width: 7rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .user-modal-cancel-button {
@@ -70,6 +71,11 @@
 
 .user-modal-save-button {
   background: linear-gradient(270.23deg, #41A0B5 2.51%, #5F1F8B 100.92%, #8730DF 100.93%);
+}
+
+.user-modal-save-button:hover,
+.user-modal-cancel-button:hover {
+  transform: scale(1.1);
 }
 
 .text-danger {

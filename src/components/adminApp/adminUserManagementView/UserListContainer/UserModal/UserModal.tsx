@@ -108,7 +108,7 @@ const UserModal = (props: any) => {
               disabled={!editMode}
               onChange={e => setUser({...user, username: e.target.value})}
             ></input>
-            {validator.current.message('Username', user.username, 'required|alpha', { className: 'text-danger' }) }
+            {validator.current.message('Username', user.username, 'required|alpha|min:5,string', { className: 'text-danger' }) }
           </label>
         </div>
         <div className="user-modal-email">
@@ -122,7 +122,7 @@ const UserModal = (props: any) => {
               disabled={!editMode}
               onChange={e => setUser({...user, email: e.target.value})}
             ></input>
-            {validator.current.message('Email', user.name, 'required|email', { className: 'text-danger' }) }
+            {validator.current.message('Email', user.email, 'required|email', { className: 'text-danger' }) }
           </label>
         </div>
         <div className="user-modal-role">
@@ -183,7 +183,7 @@ const UserModal = (props: any) => {
                 disabled={!editMode}
                 onChange={e => setUser({...user, password: e.target.value})}
               ></input>
-              {validator.current.message('Full name', user.password, 'alpha_num_dash_space', { className: 'text-danger' }) }
+              {validator.current.message('password', user.password, 'alpha_num_dash_space|min:8,string', { className: 'text-danger' }) }
             </label>
           </div>
         )}
