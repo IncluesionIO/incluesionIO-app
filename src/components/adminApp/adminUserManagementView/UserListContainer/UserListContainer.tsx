@@ -7,7 +7,6 @@ import { ReactComponent as FilterIcon } from "./icon/filter-solid.svg";
 import { ReactComponent as ChaveronIcon } from "./icon/chevron-down-solid.svg";
 import UserRow from "./UserRow/UserRow";
 import axios from "axios";
-import ModalBase from "../../../globals/Modals/ModalBase";
 import UserModal from "./UserModal/UserModal";
 const UserListContainer = () => {
   const [userList, setUserList] = useState<any[]>([]);
@@ -30,7 +29,7 @@ const UserListContainer = () => {
   }
 
   const updateUser = (user: any) => {
-    console.log(user)
+    console.log(user);
     axios
       .put("http://localhost:13000/admin/userUpdate", {
         userId: user.id,
@@ -38,21 +37,35 @@ const UserListContainer = () => {
           username: user.username,
           email: user.email,
           name: user.name,
+          role: user.role,
           accountStatus: user.accountStatus,
         },
       })
       .then((response) => {
         console.log(response);
-        setUserList([])
-        alert('User updated successfully!')
+        setUserList([]);
+        alert("User updated successfully!");
       })
       .catch((err) => {
         console.log(err);
-        if(err.response.status === 401)
-        {
-          alert('Operation not allowed!')
+        if (err.response.status === 401) {
+          alert("Operation not allowed!");
         }
       });
+
+    if (user.password) {
+      axios
+        .put("http://localhost:13000/admin/userPasswordReset", {
+          userId: user.id,
+          newPassword: user.password,
+        })
+        .then((response) => {
+          alert("User password updated successfully!");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   const operateModal = (userId: any, modalOpenAsEdit: boolean) => {
