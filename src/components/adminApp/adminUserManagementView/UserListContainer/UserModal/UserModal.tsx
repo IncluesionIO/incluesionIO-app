@@ -1,5 +1,6 @@
 import axios from "axios";
-import react, { useEffect, useState } from "react";
+import react, { useEffect, useRef, useState } from "react";
+import SimpleReactValidator from 'simple-react-validator';
 import ModalBase from "../../../../globals/Modals/ModalBase";
 import avatar from "../icon/blank-profile-picture-973460_50x50.png";
 import "./UserModal.css";
@@ -8,6 +9,14 @@ const UserModal = (props: any) => {
   const [user, setUser] = useState<any>({});
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
+  const [value, setValue] = useState(0)
+  const validator = useRef(new SimpleReactValidator())
+
+ function forceUpdate()
+  {
+    setValue(value + 1)
+  }
+  
   useEffect(() => {
     setEditMode(props.editMode)
     axios
@@ -20,7 +29,20 @@ const UserModal = (props: any) => {
         console.log(err);
       });
   }, [props.editMode, props.userId]);
-  console.log(user)
+
+  const submitUpdates = () =>
+  {
+    console.log('called')
+    if(validator.current.allValid())
+    {
+      alert('Submitted')
+    }
+    else{
+      validator.current.showMessages()
+      forceUpdate()
+    }
+  }
+
   const modalFooter = () => {
     return (
       <div className="footer">
@@ -33,7 +55,7 @@ const UserModal = (props: any) => {
           Cancel
         </button>
         {editMode ? (
-          <button className="user-modal-save-button">Save</button>
+          <button className="user-modal-save-button" onClick={_ => submitUpdates()}>Save</button>
         ) : (
           <button
             className="user-modal-save-button"
@@ -72,6 +94,7 @@ const UserModal = (props: any) => {
               disabled={!editMode}
               onChange={e => setUser({...user, name: e.target.value})}
             ></input>
+            {validator.current.message('Full name', user.name, 'required|alpha_space', { className: 'text-danger' }) }
           </label>
         </div>
         <div className="user-modal-username">
@@ -85,6 +108,7 @@ const UserModal = (props: any) => {
               disabled={!editMode}
               onChange={e => setUser({...user, username: e.target.value})}
             ></input>
+            {validator.current.message('Username', user.username, 'required|alpha', { className: 'text-danger' }) }
           </label>
         </div>
         <div className="user-modal-email">
@@ -98,6 +122,7 @@ const UserModal = (props: any) => {
               disabled={!editMode}
               onChange={e => setUser({...user, email: e.target.value})}
             ></input>
+            {validator.current.message('Email', user.name, 'required|email', { className: 'text-danger' }) }
           </label>
         </div>
         <div className="user-modal-role">
@@ -158,6 +183,7 @@ const UserModal = (props: any) => {
                 disabled={!editMode}
                 onChange={e => setUser({...user, password: e.target.value})}
               ></input>
+              {validator.current.message('Full name', user.password, 'alpha_num_dash_space', { className: 'text-danger' }) }
             </label>
           </div>
         )}

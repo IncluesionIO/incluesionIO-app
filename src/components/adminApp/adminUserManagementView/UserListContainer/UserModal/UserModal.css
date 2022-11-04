@@ -72,3 +72,15 @@
   background: linear-gradient(270.23deg, #41A0B5 2.51%, #5F1F8B 100.92%, #8730DF 100.93%);
 }
 
+.text-danger {
+  border-top: 1px solid red;
+  margin: 0!important;
+  color:red;
+}
+
+.text-danger::before {
+  font-family: FontAwesome;
+  content: '\f071';
+  margin-right: 0.5rem;
+}
+
