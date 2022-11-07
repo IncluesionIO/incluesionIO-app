@@ -14,6 +14,7 @@
 }
 
 .admin-dashboardView{
+    box-sizing: border-box;
     flex: 10;
     display: flex;
     flex-direction: row;

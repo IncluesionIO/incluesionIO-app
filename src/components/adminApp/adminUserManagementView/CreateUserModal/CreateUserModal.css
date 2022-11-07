@@ -1,0 +1,63 @@
+.create-user-modal-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.create-user-modal-input-container{
+  margin: 1rem 0rem;
+  width: 50%;
+}
+
+.create-user-modal-input {
+  width: 95%;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.create-user-modal-input:focus {
+  background-color: #41A0B511;
+}
+
+.create-user-modal-p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  width: 100%;
+  text-align: end;
+}
+
+.create-user-modal-cancel-button,
+.create-user-modal-save-button {
+  margin-right: 2rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0,0,0, 0.5) 0px 2px 6px 0px;
+  min-width: 7rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.create-user-modal-cancel-button {
+  background-color: red;
+}
+
+.create-user-modal-save-button {
+  background: linear-gradient(270.23deg, #41A0B5 2.51%, #5F1F8B 100.92%, #8730DF 100.93%);
+}
+
+.create-user-modal-save-button:hover,
+.create-user-modal-cancel-button:hover {
+  transform: scale(1.1);
+}
