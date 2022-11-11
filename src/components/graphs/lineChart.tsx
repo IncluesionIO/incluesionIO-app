@@ -12,7 +12,6 @@ import {
 } from "chart.js";
 import Lottie from "react-lottie";
 import { Line } from "react-chartjs-2";
-import axios from "axios";
 import * as animationData from "./125182-loading.json";
 import getLastSevenDaysAssessments from "./filterMethods/getLastSevenDaysAssessments";
 ChartJS.register(
