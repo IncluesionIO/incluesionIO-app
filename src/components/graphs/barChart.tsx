@@ -11,8 +11,8 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import Lottie from "react-lottie";
-import axios from "axios";
 import * as animationData from "./125182-loading.json";
+import getLatestAssessments from "./filterMethods/getLatestAssessments";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -28,7 +28,7 @@ ChartJS.register(
  * @param {(top | bottom | left | right)} props.legendPosition - The position of the legend
  * @param title - The title of the graph
  * @param labels - The X axis labels
- * @param datasets - An array of the data required for the grapg.
+ * @param datasets - An array of the data required for the graph.
  * @example - Dataset Example
  *    {
  *      label: "Dataset 1",
@@ -44,33 +44,8 @@ const BarChart = (props: any) => {
 
   //Get Data
   useEffect(() => {
-    axios
-      .get(props.requestURL || "http://localhost:13000")
-      .then((response) => {
-        setApiData(
-          {
-            labels: [
-              "10/23",
-              "10/24",
-              "10/25",
-              "10/26",
-              "10/27",
-              "10/28",
-              "10/29",
-            ],
-            datasets: [
-              {
-                label: "Example Data",
-                data: [3, 15, 12, 4, 14, 19, 0],
-              },
-            ],
-          }
-        );
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    getLatestAssessments("http://localhost:13000/assessment/list", setLoading)
+    .then(data => setApiData(data))
   }, [loading]);
 
   const options = {

@@ -14,6 +14,7 @@ import Lottie from "react-lottie";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
 import * as animationData from "./125182-loading.json";
+import getLastSevenDaysAssessments from "./filterMethods/getLastSevenDaysAssessments";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -46,33 +47,8 @@ const LineChart = (props: any) => {
 
   //Get Data
   useEffect(() => {
-    axios
-      .get(props.requestURL || "http://localhost:13000")
-      .then((response) => {
-        setApiData(
-          {
-            labels: [
-              "10/23",
-              "10/24",
-              "10/25",
-              "10/26",
-              "10/27",
-              "10/28",
-              "10/29",
-            ],
-            datasets: [
-              {
-                label: "Example Data",
-                data: [3, 15, 12, 4, 14, 19, 0],
-              },
-            ],
-          }
-        );
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    getLastSevenDaysAssessments("http://localhost:13000/assessment/list", setLoading)
+    .then(data => setApiData(data))
   }, [loading]);
 
   const options = {
@@ -86,6 +62,11 @@ const LineChart = (props: any) => {
         text: props.title,
       },
     },
+    scales: {
+      yAxis: {
+        min: 0
+      }
+    }
   };
 
   const labels = props.labels;
