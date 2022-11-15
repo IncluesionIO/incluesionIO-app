@@ -1,0 +1,39 @@
+.analytics-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 79vh;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.analytics-container-left,
+.analytics-container-right {
+  border-radius: 2rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.analytics-container-left {
+  width: 70%;
+  overflow-y: scroll;
+}
+
+.analytics-container-left::-webkit-scrollbar {
+  width: 10px;
+}
+
+.analytics-container-left::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.analytics-container-left::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 10px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.analytics-container-right {
+  width: 30%;
+}

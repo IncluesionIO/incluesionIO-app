@@ -1,6 +1,7 @@
 import React from "react";
 import AdminPageTitle from "../adminPageTitle/adminDashboardTitle";
 import "./adminAnalyticsView.css";
+import AnalyticsContainer from "./AnalyticsContainer/AnalyticsContainer";
 
 const AdminAnalyticsView = (props: any) => {
   return (
@@ -8,7 +9,7 @@ const AdminAnalyticsView = (props: any) => {
       <AdminPageTitle title="Analytics" />
 
       <div className="admin-dashboardView">
-        
+        <AnalyticsContainer />
       </div>
     </div>
   );
