@@ -24,29 +24,23 @@ ChartJS.register(
 
 /**
  *
- * @param {boolean} props.responsive - If the graph should be responsive
- * @param {(top | bottom | left | right)} props.legendPosition - The position of the legend
- * @param title - The title of the graph
- * @param labels - The X axis labels
- * @param datasets - An array of the data required for the graph.
- * @example - Dataset Example
- *    {
- *      label: "Dataset 1",
- *      data: [1, 2, 3, 4, 5],
- *      borderColor: "rgb(255, 99, 132)",
- *      backgroundColor: "rgba(255, 99, 132, 0.5)",
- *     }
- * @returns
+ * @param {boolean} props.responsive - Boolean - If the graph should be responsive
+ * @param {(top | bottom | left | right)} props.legendPosition - (top | bottom | left | right) - The position of the legend
+ * @param props.title - String - The title of the graph
+ * @param props.labels - String - The X axis labels
+ * @param props.dataset - Array - The array of assessments
+ * @param props.filterFunction - Function that filters the assessments and returns a configured dataset.
+ * @returns Bar Chart Component
  */
 const BarChart = (props: any) => {
-  const [apiData, setApiData] = useState<any>();
+  const [fomattedData, setfomattedData] = useState<any>();
   const [loading, setLoading] = useState(true);
 
   //Get Data
   useEffect(() => {
-    getLatestAssessments("http://localhost:13000/assessment/list", setLoading)
-    .then(data => setApiData(data))
-  }, [loading]);
+    setfomattedData(
+      getLatestAssessments(props.dataset, setLoading))
+  }, [props.dataset]);
 
   const options = {
     responsive: props.responsive || true,
@@ -58,12 +52,12 @@ const BarChart = (props: any) => {
         display: props.title ? true : false,
         text: props.title,
       },
-    },
+    }
   };
 
   const labels = props.labels;
-  console.log(apiData)
-  const data = apiData || {
+  console.log(fomattedData)
+  const data = fomattedData || {
     labels,
     datasets: [
       {
@@ -97,7 +91,7 @@ const BarChart = (props: any) => {
           ></Lottie>
         </div>
       ) : (
-        <Bar options={options} data={data} />
+        <Bar options={options} data={data}/>
       )}
     </div>
   );

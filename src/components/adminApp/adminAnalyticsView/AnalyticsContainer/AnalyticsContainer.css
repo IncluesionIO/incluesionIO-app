@@ -21,6 +21,7 @@
 
 .analytics-container-left::-webkit-scrollbar {
   width: 10px;
+  display: none;
 }
 
 .analytics-container-left::-webkit-scrollbar-track {
@@ -36,4 +37,24 @@
 
 .analytics-container-right {
   width: 30%;
+}
+
+.graph-group {
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.2rem;
+  background-color: #f2f2f3;
+  padding: 0.5rem 0;
+}
+
+.chart {
+  width: 32%;
+}
+
+.data-rows-container {
+  width: 100%;
 }

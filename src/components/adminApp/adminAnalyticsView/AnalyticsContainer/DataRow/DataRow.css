@@ -1,0 +1,38 @@
+.dataRow-container  {
+  box-sizing: border-box;
+  display: flex;
+  height: 5rem;
+  background-color: #f2f2f3;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dataRow-container:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 12px 0px;
+}
+
+.data-question {
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.data-answer {
+  color: rgb(255, 255, 255);
+  padding: 0.7rem 0.5rem;
+  border-radius: 50%;
+}
+
+.answer-green {
+  background-color: rgba(0, 100, 0);
+}
+
+.answer-yellow {
+  background-color: rgba(199, 196, 0);
+}
+
+.answer-red {
+  background-color: rgb(175, 0, 0);
+}
