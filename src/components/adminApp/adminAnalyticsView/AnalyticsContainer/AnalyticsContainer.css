@@ -58,3 +58,7 @@
 .data-rows-container {
   width: 100%;
 }
+
+.data-row-header {
+  margin-left: 1rem;
+}

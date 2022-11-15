@@ -48,7 +48,7 @@ const AnalyticsContainer = (props: any) => {
             <BarChart dataset={assessmentList} />
           </div>
         </div>
-        <h3>Assessment Question Metrics</h3>
+        <h3 className="data-row-header">Assessment Question Metrics</h3>
         <div className="data-rows-container">{getQuestionAveragesLists()}</div>
       </div>
       <div className="analytics-container-right">Hello Right</div>
