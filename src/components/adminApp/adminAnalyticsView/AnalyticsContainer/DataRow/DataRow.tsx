@@ -16,7 +16,7 @@ const DataRow = (props:any) => {
   return (
     <div className='dataRow-container'>
       <div className='data-question'>{props.question || "Question"}</div>
-      <div className={`data-answer ${answerRank()}`}>{props.answerAverage.toFixed(2) || 4.31}</div>
+      <div className={`data-answer ${answerRank()}`}>{props.answerAverage || 4.31}</div>
     </div>
   )
 }
