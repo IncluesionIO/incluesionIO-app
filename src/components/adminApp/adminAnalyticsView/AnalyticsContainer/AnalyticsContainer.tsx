@@ -1,5 +1,5 @@
 import axios from "axios";
-import react, { useEffect, useState, useReducer } from "react";
+import react, { useEffect, useState } from "react";
 import BarChart from "../../../graphs/barChart";
 import getLifetimeAverageAnswerPerQuestion from "../../../graphs/filterMethods/getLifetimeAverageAnswerPerQuestion";
 import "./AnalyticsContainer.css";
@@ -14,13 +14,16 @@ const AnalyticsContainer = (props: any) => {
       .get("http://localhost:13000/assessment/list")
       .then((response) => {
         setAssessmentList(response.data)
-        setQuestionAverages(getLifetimeAverageAnswerPerQuestion(assessmentList, null))
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [questionAverages]);
+  }, []);
 
+  useEffect(() => {
+    setQuestionAverages(getLifetimeAverageAnswerPerQuestion(assessmentList, null))
+  }, [assessmentList])
+  
   const getQuestionAveragesLists = () => {
     console.log(questionAverages)
     return questionAverages.map((values) => {
