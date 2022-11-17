@@ -1,15 +1,18 @@
 import axios from "axios";
 import react, { useEffect, useState } from "react";
+import Lottie from "react-lottie";
 import BarChart from "../../../graphs/barChart";
 import getLifetimeAverageAnswerPerQuestion from "../../../graphs/filterMethods/getLifetimeAverageAnswerPerQuestion";
 import LineChart from "../../../graphs/lineChart";
 import "./AnalyticsContainer.css";
 import DataRow from "./DataRow/DataRow";
+import * as animationData from "./125182-loading.json";
 
 const AnalyticsContainer = (props: any) => {
   const [assessmentList, setAssessmentList] = useState<any[]>([]);
   const [diagnosticsList, setDiagnosticsList] = useState<any[]>([]);
   const [questionAverages, setQuestionAverages] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const assessmentRequest = axios.get("http://localhost:13000/assessment/list")
@@ -20,6 +23,7 @@ const AnalyticsContainer = (props: any) => {
       {
         setAssessmentList(responses[0].data)
         setDiagnosticsList(responses[1].data)
+        setLoading(false)
       }))
       .catch((err) => {
         console.log(err);
@@ -42,6 +46,23 @@ const AnalyticsContainer = (props: any) => {
       );
     });
   };
+
+  if(loading)
+  {
+    return (
+      <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData,
+              rendererSettings: {
+                preserveAspectRatio: "xMidYMid slice",
+              },
+            }}
+            width={"25%"}
+          ></Lottie>
+    )
+  }
 
   return (
     <div className="analytics-container">
