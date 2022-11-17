@@ -1,0 +1,78 @@
+.analytics-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 79vh;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.analytics-container-left,
+.analytics-container-right {
+  border-radius: 2rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.analytics-container-left {
+  width: 70%;
+  overflow-y: scroll;
+}
+
+.analytics-container-left::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+.analytics-container-left::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.analytics-container-left::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 10px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.analytics-container-right {
+  width: 30%;
+  overflow: hidden;
+}
+
+.graph-group {
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.2rem;
+  background-color: #f2f2f3;
+  padding: 0.5rem 0;
+}
+
+
+.chart {
+  width: 32%;
+}
+
+.analytics-container-right > .graph-group {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 90%;
+  margin-bottom: 2rem;
+}
+
+.analytics-container-right > .graph-group > .chart {
+  width: 80%;
+}
+
+.data-rows-container {
+  width: 100%;
+}
+
+.data-row-header {
+  margin-left: 1rem;
+}

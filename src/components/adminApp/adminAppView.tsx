@@ -45,6 +45,7 @@ const AdminAppView = () => {
     setUserId(null);
     localStorage.removeItem("userAuth");
     localStorage.removeItem("userId");
+    localStorage.removeItem("companyID");
 
   };
 

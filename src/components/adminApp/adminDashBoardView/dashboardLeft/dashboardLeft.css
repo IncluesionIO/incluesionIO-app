@@ -26,3 +26,8 @@
     display: flex;
     /* border: 3px solid black; */
 }
+
+.dashboard-chart {
+    width: 50%;
+    height: 100%;
+}

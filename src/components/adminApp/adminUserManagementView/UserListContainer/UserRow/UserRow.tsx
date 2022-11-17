@@ -2,6 +2,7 @@ import react, { useState } from "react";
 import "./UserRow.css";
 import avatar from '../icon/blank-profile-picture-973460_50x50.png'
 import {ReactComponent as UserEditIcon} from '../icon/contextMenu.svg' 
+import format from "date-fns/format";
 
 /**
  * 
@@ -51,7 +52,7 @@ const UserRow = (props: any) => {
       <td>{props.role ? props.role : NO_DATA_MSG}</td>
       <td>{props.status ? props.status : NO_DATA_MSG}</td>
       <td>
-        {props.lastLogin ? props.lastLogin : NO_DATA_MSG}
+        {props.lastLogin ? format(new Date(props.lastLogin), "LLL d yyyy hh:mm:ss aaaa") : NO_DATA_MSG}
       </td>
       <td className="actions" onClick={e => e.stopPropagation()}>
         <button onClick={e => {setContextMenuOpen(!contextMenuOpen); e.stopPropagation()}} className="user-menu-button"><UserEditIcon /></button>

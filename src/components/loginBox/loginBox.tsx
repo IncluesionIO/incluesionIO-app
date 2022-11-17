@@ -49,8 +49,10 @@ const LoginBox = () => {
             password
         }).then((response) => {
           const responseData = response.data;
+          console.log(responseData)
           localStorage.setItem('userAuth', JSON.stringify(responseData.token));
           localStorage.setItem('userId', JSON.stringify(responseData.userId));
+          localStorage.setItem('companyID', JSON.stringify(responseData.companyID))
           navigate('/admin')
         })
         .catch(err =>
