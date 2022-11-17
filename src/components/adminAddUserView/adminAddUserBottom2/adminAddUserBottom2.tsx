@@ -5,7 +5,7 @@ const AdminAddUserBottom2 = () => {
     return(
         <div className="admin-addUserBottom2">
             <div className="admin-addUserBar">
-                <h1>bar</h1>
+                <h1>number bar</h1>
             </div>
             <div className="admin-addUserCaption">
                 <h1 className="addUserCaptionTop">Lets info your company info</h1>
