@@ -1,0 +1,72 @@
+.admin-addUserBottom1{
+    flex:5;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid blue; */
+    align-items: center;
+}
+
+.admin-addUserBar{
+    /* border: 3px solid green; */
+    flex: 1;
+}
+
+.admin-addUserCaption{
+    /* border: 3px solid green; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addUserCaptionTop{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 40px;
+    flex: 1;
+    font-weight: bold;
+}
+
+.addUserCaptionBottom{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 16px;
+    flex: 1;
+    font-weight: lighter;
+}
+
+.admin-addUserInputs{
+    /* border: 3px solid green; */
+    flex: 5;
+    text-align: center;
+    width: 600px
+}
+
+.admin-addUserInputs label{
+    text-align: left;
+    display: block;
+    font-size: 24px;
+    margin-left: 10px;
+    color: black;
+}
+
+.admin-addUserInputs input{
+    box-sizing: border-box;
+    display: block;
+    width:100%;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.admin-addUserInputs button{
+    background: linear-gradient(blue,cyan);
+    color: white;
+    font-size: 25px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 130px;
+    margin-top: 25px;
+}
