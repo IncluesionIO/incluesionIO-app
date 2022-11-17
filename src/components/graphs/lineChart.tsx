@@ -13,7 +13,7 @@ import {
 import Lottie from "react-lottie";
 import { Line } from "react-chartjs-2";
 import * as animationData from "./125182-loading.json";
-import getLastSevenDaysAssessments from "./filterMethods/getLastSevenDaysAssessments";
+import getLastSevenDaysofData from "./filterMethods/getLastSevenDaysofData";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -41,7 +41,7 @@ const LineChart = (props: any) => {
   //Get Data
   useEffect(() => {
     setfomattedData(
-      getLastSevenDaysAssessments(props.dataset, setLoading))
+      getLastSevenDaysofData(props.dataset, setLoading, props.dataTitle))
   }, [props.dataset]);
 
   const options = {

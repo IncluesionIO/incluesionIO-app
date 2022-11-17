@@ -1,6 +1,7 @@
 import axios from "axios";
 import react, { useEffect, useRef, useState } from "react";
 import SimpleReactValidator from "simple-react-validator";
+import format from "date-fns/format";
 import ModalBase from "../../../../globals/Modals/ModalBase";
 import avatar from "../icon/blank-profile-picture-973460_50x50.png";
 import "./UserModal.css";
@@ -184,7 +185,7 @@ const UserModal = (props: any) => {
             <div className="user-modal-lastLogin">
               <p className="user-modal-p">Last Login</p>
               <p className="user-modal-lastLogin-text">
-                {user.lastLogin ? user.lastLogin : "Not Available"}
+                {user.lastLogin ? format(new Date(user.lastLogin), "LLL d yyyy hh:mm:ss aaaa") : "Not Available"}
               </p>
             </div>
           ) : (

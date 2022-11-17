@@ -45,10 +45,10 @@ const DashboardLeft = () => {
           </div>
           <div className="widget-container">
             <div className="dashboard-chart">
-              <LineChart dataset={assessmentList} />
+              <LineChart dataset={assessmentList} dataTitle={"Assessment Submissions"}/>
             </div>
             <div className="dashboard-chart">
-              <BarChart dataset={assessmentList} />
+              <BarChart dataset={assessmentList} dataTitle={"Assessment Submissions"}/>
             </div>
           </div>
         </div>

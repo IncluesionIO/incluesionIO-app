@@ -6,7 +6,7 @@ import format from "date-fns/format";
  * @param {*} setLoading - Loading state boolean from parent element
  * @returns Object containing labels and the datasets
  */
-const getLatestAssessments = (dataset, setLoading) => {
+const getLatestAssessments = (dataset, setLoading, dataTitle) => {
   var map = new Map();
   dataset.forEach((assessment) => {
     //Format each key into mmddyyyy to sort appropriately
@@ -28,7 +28,7 @@ const getLatestAssessments = (dataset, setLoading) => {
     labels,
     datasets: [
       {
-        label: "Previous 7 Days of Latest Assessments",
+        label: `Top 7 Days of ${dataTitle}`,
         data: values,
         backgroundColor: "#000f4dee",
       },

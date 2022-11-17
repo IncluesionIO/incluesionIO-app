@@ -39,7 +39,7 @@ const BarChart = (props: any) => {
   //Get Data
   useEffect(() => {
     setfomattedData(
-      getLatestAssessments(props.dataset, setLoading))
+      getLatestAssessments(props.dataset, setLoading, props.dataTitle))
   }, [props.dataset]);
 
   const options = {
