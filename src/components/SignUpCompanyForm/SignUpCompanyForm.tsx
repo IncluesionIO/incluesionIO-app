@@ -82,6 +82,7 @@ const SignUpCompanyForm = () => {
           companyId: JSON.parse(localStorage.getItem("createdCompanyID") || ""),
         })
         .then((accountCreatedRes) => {
+          localStorage.removeItem("createdCompanyID")
           navigate("/");
         })
         .catch((err) => {
@@ -116,6 +117,7 @@ const SignUpCompanyForm = () => {
             companyId: response.data.companyId,
           })
           .then((accountCreatedRes) => {
+            localStorage.removeItem("createdCompanyID")
             navigate("/");
           })
           .catch((err) => {
