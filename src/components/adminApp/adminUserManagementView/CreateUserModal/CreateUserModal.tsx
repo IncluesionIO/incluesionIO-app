@@ -77,6 +77,13 @@ const CreateUserModal = (props:any) =>
         </div>
         <div className='create-user-modal-input-container'>
           <label>
+            <p className='create-user-modal-p'>Date of Birth</p>
+            <input type="date" id='create-user-modal-dob' className='create-user-modal-input' value={user.dob} onChange={e => setUser({...user, dob: e.target.value})} />
+            {validator.current.message('dateOfBirth', user.dob, 'required', { className: 'text-danger' })}
+          </label>
+        </div>
+        <div className='create-user-modal-input-container'>
+          <label>
             <p className="create-user-modal-p">Role</p>
             <select value={user.role} onChange={e => setUser({...user, role: e.target.value})}>
               <option value={"ADMIN"}>Admin</option>

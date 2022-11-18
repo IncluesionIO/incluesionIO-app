@@ -22,6 +22,8 @@ const AdminUserManagementView = (props: any) => {
         name: user.name,
         email: user.email,
         role: user.role,
+        companyId: JSON.parse(localStorage.getItem('companyID') || ""),
+        dateOfBirth: new Date(user.dob).toISOString()
       })
       .then((response) => {
         console.log(response)
@@ -29,6 +31,7 @@ const AdminUserManagementView = (props: any) => {
         forceUpdate()
       })
       .catch((err) => {
+        console.log(err)
         alert("There was an error creating user!");
       });
   };

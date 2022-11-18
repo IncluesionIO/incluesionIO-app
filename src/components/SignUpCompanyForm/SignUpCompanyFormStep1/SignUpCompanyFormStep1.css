@@ -1,0 +1,60 @@
+.admin-addCompanyBottom1{
+    flex:5;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid blue; */
+    align-items: center;
+}
+
+.admin-addCompanyBar{
+    /* border: 3px solid green; */
+    flex: 1;
+}
+
+.admin-addCompanyCaption{
+    /* border: 3px solid green; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addCompanyCaptionTop{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 40px;
+    flex: 1;
+    font-weight: bold;
+}
+
+.addCompanyCaptionBottom{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 16px;
+    flex: 1;
+    font-weight: lighter;
+}
+
+.admin-addCompanyInputs{
+    /* border: 3px solid green; */
+    flex: 5;
+    text-align: center;
+    width: 600px
+}
+
+.admin-addCompanyInputs label{
+    text-align: left;
+    display: block;
+    font-size: 24px;
+    margin-left: 10px;
+    color: black;
+}
+
+.admin-addCompanyInputs input{
+    box-sizing: border-box;
+    display: block;
+    width:100%;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

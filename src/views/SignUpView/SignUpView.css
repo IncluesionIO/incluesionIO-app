@@ -1,0 +1,14 @@
+.startContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.startFormContainer  {
+  display: flex;
+  flex: 1;
+  align-content: center;
+}
+
+
