@@ -1,0 +1,64 @@
+.admin-addCompanyView{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    flex : 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* border: 3px solid green; */
+}
+
+.admin-addCompanyTitle{
+    flex:1;
+    border-bottom: 2px solid #000F4D;
+    background-image: linear-gradient(to bottom, rgb(200, 200, 200), white);
+    
+}
+
+.admin-addCompanyInput{
+    /* border: 3px solid blue; */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 5;
+}
+
+.admin-addCompanyBottomPage{
+    margin-top: 10px;
+    flex: 4;
+    /* border: 3px solid yellow; */
+}
+
+.admin-addCompanyInputButtons{
+    /* border: 3px solid yellow; */
+    display:flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    /* width: 500px; */
+}
+
+.admin-addCompanyInputPrevious{
+    background: linear-gradient(to right, #41A0B5,#8730DF);
+    color: white;
+    font-size: 25px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 130px;
+    margin-right: 200px;
+}
+
+.admin-addCompanyInputNext{
+    background: linear-gradient(to right, #41A0B5,#8730DF);
+    color: white;
+    font-size: 25px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 130px;
+}
