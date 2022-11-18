@@ -1,7 +1,7 @@
 import axios from "axios";
 import format from "date-fns/format";
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
 import "./SignUpCompanyForm.css";
 import { SignUpCompanyFormStep1 } from "./SignUpCompanyFormStep1/SignUpCompanyFormStep1";
@@ -177,6 +177,7 @@ const SignUpCompanyForm = () => {
           ""
         )}
       </div>
+      <Link to={"/"}>Return to login</Link>
     </div>
   );
 };
