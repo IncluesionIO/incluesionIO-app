@@ -1,7 +1,7 @@
 import React from "react";
-import './adminAddCompanyBottom2.css'
+import '../SignUpCompanyForm.css'
 
-const AdminAddCompanyBottom2 = () => {
+const SignUpCompanyFormStep2 = ({inputValues, setInputValues}: {inputValues:any, setInputValues: any}) => {
     return(
         <div className="admin-addCompanyBottom2">
             <div className="admin-addCompanyBar">
@@ -39,4 +39,4 @@ const AdminAddCompanyBottom2 = () => {
     )
 }
 
-export {AdminAddCompanyBottom2}
+export {SignUpCompanyFormStep2}

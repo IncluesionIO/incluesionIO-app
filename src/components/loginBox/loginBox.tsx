@@ -78,6 +78,7 @@ const LoginBox = () => {
   return (
     <div className="containerLoginBox">
       <div className="containerLoginBox-title">{title}</div>
+      <Link to={"/start"}>Sign Up</Link>
       <span id="errorAlert" className="errorAlert">{errorAlert}</span>
       <form onSubmit={handleSubmit} className={"formLogin"}>
         <div>

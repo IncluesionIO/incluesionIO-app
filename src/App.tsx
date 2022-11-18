@@ -5,6 +5,7 @@ import AdminAppView from "./components/adminApp/adminAppView";
 import TheForgotPasswordView from "./views/forgotPasswordView/TheForgotPasswordView";
 import TheLoginView from "./views/loginView/TheLoginView";
 import TheResetPasswordView from "./views/resetPasswordView/TheResetPasswordView";
+import SignUpView from "./views/SignUpView/SignUpView";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/reset/:token" element={<TheResetPasswordView />} />
         <Route path="/forgot-password" element={<TheForgotPasswordView />} />
         <Route path="/" element={<TheLoginView />} />
+        <Route path="/start" element={<SignUpView />} />
         <Route path="/admin/*" element={<AdminAppView />} />
       </Routes>
     </Router>
