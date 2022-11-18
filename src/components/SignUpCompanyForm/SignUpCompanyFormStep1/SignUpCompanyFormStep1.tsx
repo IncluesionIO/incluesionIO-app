@@ -123,7 +123,7 @@ const SignUpCompanyFormStep1 = ({
                 id="singup-form-input-email"
                 name="orgType"
                 required
-                value={"For-Profit"}
+                value={"Profit"}
                 onChange={(e) =>
                   setInputValues({
                     ...inputValues,
@@ -142,7 +142,7 @@ const SignUpCompanyFormStep1 = ({
                 id="singup-form-input-email"
                 name="orgType"
                 required
-                value={"Non-Profit"}
+                value={"Non-profit"}
                 onChange={(e) =>
                   setInputValues({
                     ...inputValues,

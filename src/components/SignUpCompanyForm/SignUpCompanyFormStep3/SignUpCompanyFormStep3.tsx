@@ -77,7 +77,7 @@ const SignUpCompanyFormStep3 = ({inputValues,
               {validator.message(
                 "username",
                 inputValues.adminUsername,
-                "required|email",
+                "required",
                 { className: "text-danger" }
               )}
             </label>
