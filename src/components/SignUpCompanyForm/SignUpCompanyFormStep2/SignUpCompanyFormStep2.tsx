@@ -1,42 +1,67 @@
 import React from "react";
-import '../SignUpCompanyForm.css'
+import SimpleReactValidator from "simple-react-validator";
+import "../SignUpCompanyForm.css";
 
-const SignUpCompanyFormStep2 = ({inputValues, setInputValues}: {inputValues:any, setInputValues: any}) => {
-    return(
-        <div className="admin-addCompanyBottom2">
-            <div className="admin-addCompanyBar">
-                <h1>Step 2</h1>
+const SignUpCompanyFormStep2 = ({
+  inputValues,
+  setInputValues,
+  validator,
+}: {
+  inputValues: any;
+  setInputValues: any;
+  validator: SimpleReactValidator;
+}) => {
+  return (
+    <div className="signup-formStepContainer">
+      <div className="signup-formBar">
+        <ul>
+          <li className="passed signup-formBar-prgoressBar-1">
+            <div>
+              <p>1</p>
             </div>
-            <div className="admin-addCompanyCaption">
-                <h1 className="addCompanyCaptionTop">Lets info your company info</h1>
-                <h2 className="addCompanyCaptionBottom">Share some details about your company</h2>
+          </li>
+          <li className="active signup-formBar-prgoressBar-2">
+            <div>
+              <p>2</p>
             </div>
-            <div className="admin-addCompanyInputs">
-                <form>
-                    <label>Object ID:</label>
-                    <input
-                        type="text"
-                        required
-                    />
-                    <label>Company Name:</label>
-                    <input
-                        type="text"
-                        required
-                    />
-                    <label>Organization Type:</label>
-                    <input
-                        type="text"
-                        required
-                    />
-                    <label>Company Admin Email:</label>
-                    <input
-                        type="text"
-                        required
-                    />
-                </form>
+          </li>
+          <li className="signup-formBar-prgoressBar-3">
+            <div>
+              <p>3</p>
             </div>
+          </li>
+        </ul>
+      </div>
+      <div className="signup-formCaption">
+        <h1 className="addCompanyCaptionTop">
+          Tell us about your company!
+        </h1>
+        <h2 className="addCompanyCaptionBottom">
+          What best describes your company?
+        </h2>
+      </div>
+      <div className="signup-formInputs">
+        <div className="signup-fromGroup">
+          <label>
+            <p className="signup-from-p">What is your industry?</p>
+            <input
+              className="singup-form-input"
+              type="text"
+              id="singup-form-input-industry"
+              required
+              value={inputValues.companyIndustry}
+              onChange={(e) =>
+                setInputValues({ ...inputValues, companyIndustry: e.target.value })
+              }
+            />
+            {validator.message("industry", inputValues.companyIndustry, "required", {
+              className: "text-danger",
+            })}
+          </label>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export {SignUpCompanyFormStep2}
+export { SignUpCompanyFormStep2 };

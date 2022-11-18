@@ -1,58 +1,114 @@
-.admin-addCompanyView{
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-    flex : 1;
+.signup-formView{
     display: flex;
     flex-direction: column;
     background-color: white;
-    /* border: 3px solid green; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.admin-addCompanyTitle{
+.signup-formTitle{
     flex:1;
     border-bottom: 2px solid #000F4D;
-    background-image: linear-gradient(to bottom, rgb(200, 200, 200), white);
-    
+    background-image: linear-gradient(to bottom, rgb(200, 200, 200), white);   
 }
 
-.admin-addCompanyInput{
-    /* border: 3px solid blue; */
-    align-self: center;
+.signup-formBar {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-formBar ul {
+    display: flex;
+    margin: 0;
+    margin-bottom: 3rem;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.signup-formBar ul li {
+    position: relative;
+    margin-right: 6rem;
+}
+
+.signup-formBar ul li:last-child {
+    margin-right: 0;
+}
+
+.signup-formBar ul li:before {
+    content: "";
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 55px;
+    width: 180%;
+    height: 2px;
+    background: black;
+}
+
+.signup-formBar ul li:last-child::before {
+    display: none;
+}
+
+.signup-formBar ul li div {
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.signup-formBar ul li p {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    background-color: #000F4DEE;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.signup-form-container{
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 5;
 }
 
-.admin-addCompanyBottomPage{
-    margin-top: 10px;
-    flex: 4;
-    /* border: 3px solid yellow; */
+.signup-formBar ul li.active:before,
+.signup-formBar ul li.active p {
+    background-color: #21337e;
 }
 
-.admin-addCompanyInputButtons{
-    /* border: 3px solid yellow; */
+.signup-formBar ul li.passed::before,
+.signup-formBar ul li.passed p {
+    background-color: rgb(161, 161, 161);
+}
+
+.signup-formBar ul li.active div {
+    border-radius: 50%;
+    padding: 0.3rem;
+    background: rgb(255,255,255);
+}
+
+.signup-formBar ul li.active {
+    border-radius: 50%;
+    padding: 0.3rem;
+    background: #21337e;
+}
+
+.signup-formBar ul li.active:before
+{
+    left:70px;
+    width:150%
+}
+
+.signup-formStepButtons{
+    margin-top: 2rem;
     display:flex;
     flex-direction: row;
-    flex: 1;
     align-items: center;
-    /* width: 500px; */
 }
 
-.admin-addCompanyInputPrevious{
-    background: linear-gradient(to right, #41A0B5,#8730DF);
-    color: white;
-    font-size: 25px;
-    border: 0;
-    border-radius: 8px;
-    cursor: pointer;
-    height: 50px;
-    width: 130px;
-    margin-right: 200px;
-}
-
-.admin-addCompanyInputNext{
+.signup-formStepPrevious{
     background: linear-gradient(to right, #41A0B5,#8730DF);
     color: white;
     font-size: 25px;
@@ -62,3 +118,102 @@
     height: 50px;
     width: 130px;
 }
+
+.signup-formStepNext{
+    background: linear-gradient(to right, #41A0B5,#8730DF);
+    color: white;
+    font-size: 25px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 130px;
+}
+
+.signup-formStepPrevious + .signup-formStepNext {
+    margin-left: 5rem;
+}
+
+.signup-formStepContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.signup-formCaption {
+    width: 100%;
+    text-align: center;
+}
+
+.signup-formInputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+}
+
+.signup-fromGroup {
+    margin: 1rem;
+    width: 100%;
+}
+
+.signup-from-p {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.support-context {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.singup-form-input {
+    width: 100%;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    border: none;
+    border: 1px solid rgb(0, 0, 0, .1);
+    border-bottom: 1px solid black ;
+    height: 3rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    outline: none;
+}
+
+.singup-form-input:focus {
+    background-color: #41A0B511;
+  }
+
+  .signup-radioGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+
+  .radio-card {
+    background-color: #fff;
+    border: 1px solid #21337e;
+    height: 3rem;
+    padding-left: 1rem;
+    border-radius: 1rem;
+    position: relative;
+    line-height: 3rem;
+  }
+
+  .radio-card:has(:checked) {
+    border: 3px solid #21337e;
+  }
+
+  .radio-card:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+
+  .singup-form-input-radio {
+    display: none;
+  }

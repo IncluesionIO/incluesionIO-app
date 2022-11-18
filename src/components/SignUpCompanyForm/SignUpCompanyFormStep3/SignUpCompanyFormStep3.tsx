@@ -1,33 +1,113 @@
 import React from "react";
+import SimpleReactValidator from "simple-react-validator";
 import '../SignUpCompanyForm.css'
 
-const SignUpCompanyFormStep3 = ({inputValues, setInputValues}: {inputValues:any, setInputValues: any}) => {
-    return(
-        <div className="admin-addCompanyBottom3">
-            <div className="admin-addCompanyBar">
-                <h1>Step 3</h1>
-            </div>
-            <div className="admin-addCompanyCaption">
-                <h1 className="addCompanyCaptionTop">Some additional info</h1>
-                <h2 className="addCompanyCaptionBottom">Let's setup your company details accordingly</h2>
-            </div>
-            <div className="admin-addCompanyInputs">
-                <form>
-                    <label>Details:</label>
-                    <textarea
-                        required
-                    />
-                    <label>Details:</label>
-                    <textarea
-                        required
-                    />
-                    <label>Details:</label>
-                    <textarea
-                        required
-                    />
-                </form>
-            </div>
+const SignUpCompanyFormStep3 = ({inputValues,
+    setInputValues,
+    validator,
+  }: {
+    inputValues: any;
+    setInputValues: any;
+    validator: SimpleReactValidator;
+  }) => {
+    return (
+      <div className="signup-formStepContainer">
+        <div className="signup-formBar">
+          <ul>
+            <li className="passed signup-formBar-prgoressBar-1">
+              <div>
+                <p>1</p>
+              </div>
+            </li>
+            <li className="passed signup-formBar-prgoressBar-2">
+              <div>
+                <p>2</p>
+              </div>
+            </li>
+            <li className="active signup-formBar-prgoressBar-3">
+              <div>
+                <p>3</p>
+              </div>
+            </li>
+          </ul>
         </div>
+        <div className="signup-formCaption">
+          <h1 className="addCompanyCaptionTop">
+            Let's create the admin account!
+          </h1>
+          <h2 className="addCompanyCaptionBottom">
+            Fill out the following fields
+          </h2>
+        </div>
+        <div className="signup-formInputs">
+          <div className="signup-fromGroup">
+            <label>
+              <p className="signup-from-p">Your Name:</p>
+              <input
+                className="singup-form-input"
+                type="text"
+                id="singup-form-input-name"
+                required
+                value={inputValues.adminName}
+                onChange={(e) =>
+                  setInputValues({ ...inputValues, adminName: e.target.value })
+                }
+              />
+              {validator.message("name", inputValues.adminName, "required", {
+                className: "text-danger",
+              })}
+            </label>
+          </div>
+          <div className="signup-fromGroup">
+            <label>
+              <p className="signup-from-p">Username:</p>
+              <input
+                className="singup-form-input"
+                type="email"
+                id="singup-form-input-email"
+                required
+                value={inputValues.adminUsername}
+                onChange={(e) =>
+                  setInputValues({
+                    ...inputValues,
+                    adminUsername: e.target.value,
+                  })
+                }
+              />
+              {validator.message(
+                "username",
+                inputValues.adminUsername,
+                "required|email",
+                { className: "text-danger" }
+              )}
+            </label>
+          </div>
+          <div className="signup-fromGroup">
+            <label>
+              <p className="signup-from-p">Email</p>
+              <input
+                className="singup-form-input"
+                type="email"
+                id="singup-form-input-supportemail"
+                required
+                value={inputValues.adminEmail}
+                onChange={(e) =>
+                  setInputValues({
+                    ...inputValues,
+                    adminEmail: e.target.value,
+                  })
+                }
+              />
+              {validator.message(
+                "email",
+                inputValues.adminEmail,
+                "required|email",
+                { className: "text-danger" }
+              )}
+            </label>
+          </div>
+        </div>
+      </div>
     )
 }
 
