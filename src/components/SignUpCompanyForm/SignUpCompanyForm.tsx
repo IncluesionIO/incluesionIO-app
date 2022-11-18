@@ -103,7 +103,7 @@ const SignUpCompanyForm = () => {
         //Set the created company ID to localstorage in case of an error with creating the user
         localStorage.setItem(
           "createdCompanyID",
-          JSON.stringify(response.data.companyID)
+          JSON.stringify(response.data.companyId)
         );
         //Send account creation request
         axios
